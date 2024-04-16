@@ -22,9 +22,9 @@ def generate_csv_files(zip_file_path, folder_names):
                         with open(file_path, 'r', encoding='utf-8') as file:
                             text = file.read()
                             if folder_name == 'train':
-                                train_data.append({'phrase': text, 'target': sentiment})
+                                train_data.append({'phrase': text, 'sentiment': sentiment})
                             elif folder_name == 'test':
-                                test_data.append({'phrase': text, 'target': sentiment})
+                                test_data.append({'phrase': text, 'sentiment': sentiment})
 
     # Crear DataFrames
     train_df = pd.DataFrame(train_data)
@@ -35,8 +35,8 @@ def generate_csv_files(zip_file_path, folder_names):
     test_df.to_csv('test_dataset.csv', index=False)
 
     # Contar las ocurrencias de "positive", "negative" y "neutral" en cada archivo CSV
-    train_counts = train_df['target'].value_counts().to_dict()
-    test_counts = test_df['target'].value_counts().to_dict()
+    train_counts = train_df['sentiment'].value_counts().to_dict()
+    test_counts = test_df['sentiment'].value_counts().to_dict()
 
     return train_counts, test_counts
 
@@ -45,5 +45,3 @@ train_counts, test_counts = generate_csv_files('data.zip', ['train', 'test'])
 
 print(train_counts)
 print(test_counts)
-
-
