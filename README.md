@@ -1,5 +1,5 @@
 La información requerida para este laboratio esta almacenada en el archivo 
-"data.zip" ubicado en la carpeta raíz. Descomprima este archivo. 
+"data.zip" ubicado en la carpeta raíz. Descomprima este archivo.
 
 Como resultado obtendra la siguiente estructura de archivos:
 
